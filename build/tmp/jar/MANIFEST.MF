@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Application-Name: Australian Imaging Service ECP Plugin for XNAT 1.8
+Build-Date: Thu Aug 22 10:09:04 ACST 2024
+Build-Number: Manual
+Implementation-Version: 1.0.0-ECP
+Implementation-Sha: bc38242219
+Implementation-Sha-Full: bc38242219b3349e309dae9b90d74c0591aa78d8
+Implementation-Commit: 0
+Implementation-LastTag: bc38242
+Implementation-Branch: main
+Implementation-CleanTag: false
+Implementation-Dirty: true
+

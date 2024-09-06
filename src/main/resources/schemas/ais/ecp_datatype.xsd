@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ xnat-template-plugin: template.xsd
+  ~ XNAT https://www.xnat.org
+  ~ Copyright (c) 2005-2021, Washington University School of Medicine
+  ~ All Rights Reserved
+  ~
+  ~ Released under the Simplified BSD.
+  -->
+
+<!--
+	TODO: You can use this as the basis for an XNAT data-type definition or simply delete it. Note that there are other
+	files related to the data type defined here:
+
+	 - src/main/java/org/apache/turbine/app/xnat/modules/screens/XDATScreen_edit_template_sample.java
+	 - src/main/java/org/apache/turbine/app/xnat/modules/screens/XDATScreen_report_template_sample.java
+	 - src/main/resources/META-INF/resources/templates/screens/XDATScreen_edit_template_sample.vm
+	 - src/main/resources/META-INF/resources/templates/screens/XDATScreen_report_template_sample.vm
+	 - src/main/resources/META-INF/resources/templates/screens/xnat_subjectData/actionsBox/sample.vm
+-->
+<xs:schema targetNamespace="http://australian-imaging-service.github.io/" xmlns:ais="http://australian-imaging-service.github.io/" xmlns:xnat="http://nrg.wustl.edu/xnat"
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://nrg.wustl.edu/xnat" schemaLocation="../xnat/xnat.xsd"/>
+	<xs:element name="xcpSessionData" type="ais:xcpSessionData"/>
+
+	<xs:complexType name="xcpSessionData">
+		<xs:annotation>
+			<xs:documentation>External Camera Protected (ECP) session datatype.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="xnat:imageSessionData">
+				<xs:sequence>
+					<xs:element name="image_resolution">
+						<xs:annotation>
+							<xs:documentation>The ECP data type</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:float"/>
+						</xs:simpleType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>
