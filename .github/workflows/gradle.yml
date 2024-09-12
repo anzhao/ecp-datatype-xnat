@@ -19,6 +19,9 @@ jobs:
         distribution: 'temurin'
         java-version: '21'
         cache: 'gradle'
+
+    - run: ls /Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home
+
         
     - run: ./gradlew build --no-daemon
 
