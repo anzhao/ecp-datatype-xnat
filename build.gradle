@@ -110,19 +110,24 @@ try {
     isCleanTag = false
 }
 
+
 ext.gitManifest = manifest {
-    attributes "Application-Name": project.description,
-            "Build-Date": buildDate,
-            "Build-Number": buildNumber,
-            "Implementation-Version": project.version,
-            "Implementation-Sha": gitHash,
-            "Implementation-Sha-Full": gitHashFull,
-            "Implementation-Commit": commitDistance,
-            "Implementation-LastTag": lastTag,
-            "Implementation-Branch": branchName,
-            "Implementation-CleanTag": isCleanTag,
-            "Implementation-Dirty": isDirty
+    attributes(
+        "Application-Name": project.description ?: "Unknown",
+        "Build-Date": buildDate ?: "Unknown",
+        "Build-Number": buildNumber ?: "Unknown",
+        "Implementation-Version": project.version ?: "Unknown",
+        "Implementation-Sha": gitHash ?: "Unknown",
+        "Implementation-Sha-Full": gitHashFull ?: "Unknown",
+        "Implementation-Commit": commitDistance ?: "Unknown",
+        "Implementation-LastTag": lastTag ?: "Unknown",
+        "Implementation-Branch": branchName ?: "Unknown",
+        "Implementation-CleanTag": isCleanTag ?: "Unknown",
+        "Implementation-Dirty": isDirty ?: "Unknown"
+    )
 }
+
+
 
 logger.info """
 Building artifacts with manifest attributes:
