@@ -16,17 +16,15 @@ jobs:
     - uses: actions/checkout@v4
     - uses: actions/setup-java@v4
       with:
-        distribution: 'temurin'
-        java-version: '21'
-      
+        java-version: '22'
+        distribution: 'adopt' # Options: adopt, zulu, temurin, etc.
+
+    - name: Verify Java version
+      run: java -version
         
     - run: ./gradlew build --no-daemon
 
 
 
 
-      
 
-   
-
-   
