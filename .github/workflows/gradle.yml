@@ -22,7 +22,7 @@ jobs:
     - name: Verify Java version
       run: java -version
         
-    - run: ./gradlew build --no-daemon
+    - run: ./gradlew build
 
 
 
