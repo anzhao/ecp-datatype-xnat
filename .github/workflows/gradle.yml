@@ -22,9 +22,13 @@ jobs:
     - name: Verify Java version
       run: java -version
 
-    - name: biuld the jar file    
+    - name: clean the previous build file    
       run: ./gradlew clean
+
+    - name: stop    
       run: ./gradlew --stop
+
+    - name: start the fresh new build
       run: ./gradlew build --refresh-dependencies
 
       
