@@ -23,7 +23,11 @@ jobs:
       run: java -version
 
     - name: biuld the jar file    
-      run: ./gradlew build --no-daemon --stacktrace
+      run: ./gradlew clean
+      run: ./gradlew --stop
+      run: ./gradlew build --refresh-dependencies
+
+      
 
 
 
