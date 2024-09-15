@@ -21,8 +21,9 @@ jobs:
 
     - name: Verify Java version
       run: java -version
-        
-    - run: ./gradlew build --no-daemon --stacktrace
+
+    - name: biuld the jar file    
+      run: ./gradlew build --no-daemon --stacktrace
 
 
 
