@@ -92,13 +92,13 @@ def isDirty, branchName, gitHash, gitHashFull, commitDistance, lastTag, isCleanT
 
 try {
     def gitDetails = versionDetails()
-    isDirty = gitVersion().endsWith ".dirty"
+    isDirty = gitVersion()?.endsWith(".dirty") ?: false
     branchName = gitDetails.branchName ?: "Unknown"
-    gitHash = gitDetails.gitHash
-    gitHashFull = gitDetails.gitHashFull
-    commitDistance = gitDetails.commitDistance
-    lastTag = gitDetails.lastTag
-    isCleanTag = gitDetails.isCleanTag
+    gitHash = gitDetails.gitHash ?: "None"
+    gitHashFull = gitDetails.gitHashFull ?: "None"
+    commitDistance = gitDetails.commitDistance ?: 0
+    lastTag = gitDetails.lastTag ?: "None"
+    isCleanTag = gitDetails.isCleanTag ?: false
 } catch (IllegalArgumentException e) {
     logger.info "Got an error trying to read VCS metadata from git. It's possible this project is not under VCS control. Using placeholder values for manifest entries."
     isDirty = true
