@@ -9,7 +9,7 @@ on:
       - 'v*.*.*' # publish new version for tag which follows 'v*.*.*' format
 
 env:
-  SERVICE_NAME: ecp-plugin
+  SERVICE_NAME: ecp-datatype-plugin
 
 jobs:
   verification:
