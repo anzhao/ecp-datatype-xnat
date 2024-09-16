@@ -24,6 +24,8 @@ jobs:
           distribution: 'temurin' 
           java-version: '17' 
           cache: 'gradle' 
+      - name: List the directory
+        run: ls -la
       - name: Run all tests
         run: ./gradlew clean check --no-daemon
         working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
