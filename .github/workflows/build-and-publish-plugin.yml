@@ -67,4 +67,4 @@
         #run: ./gradlew publish --no-daemon
         #working-directory: ${{ github.workspace }}/${{ env.SERVICE_NAME }}/
         #env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
